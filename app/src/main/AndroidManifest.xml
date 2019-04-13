@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.findx.wifiindoorpositioning.wifiindoorpositioning">
+
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:required="true"/>
+
+    <application
+        android:name=".BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.NewProjectActivity"
+            android:label="@string/new_project" />
+        <activity
+            android:name=".ui.ProjectDetailActivity"
+            android:label="@string/project_detail" />
+        <activity
+            android:name=".ui.AddOrEditAccessPointActivity"
+            android:label="@string/add_access_point" />
+        <activity
+            android:name=".ui.SearchWifiAccessPointActivity"
+            android:label="@string/add_access_point" />
+        <activity
+            android:name=".ui.AddOrEditReferencePointActivity"
+            android:label="@string/add_reference_point" />
+        <activity
+            android:name=".ui.LocateMeActivity"
+            android:label="@string/locate_me" />
+        <activity
+            android:name=".ui.UnifiedNavigationActivity"
+            android:label="Settings" />
+
+        <service android:name=".core.WifiService" />
+
+        <activity android:name=".ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"
+            />
+
+        <activity
+            android:name=".ui.MapsActivity"
+            android:label="Maps"></activity>
+    </application>
+
+</manifest>
