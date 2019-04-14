@@ -116,6 +116,13 @@ public class AddOrEditReferencePointActivity extends AppCompatActivity implement
                 Toast.makeText(this,"Please turn on the location", Toast.LENGTH_SHORT).show();
             }
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(AddOrEditReferencePointActivity.this,"Large number of WiFi networks are in range, Calibration may take time", Toast.LENGTH_LONG).show();
+            }
+        },3000);
     }
 
     @Override

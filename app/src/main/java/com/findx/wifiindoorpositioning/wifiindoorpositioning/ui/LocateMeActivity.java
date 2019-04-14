@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
@@ -74,6 +75,13 @@ public class LocateMeActivity extends AppCompatActivity {
         Realm realm = Realm.getDefaultInstance();
         project = realm.where(IndoorProject.class).equalTo("id", projectId).findFirst();
         Log.v("LocateMeActivity", "onCreate");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(LocateMeActivity.this,"KNN Run Success", Toast.LENGTH_LONG).show();
+            }
+        },2000);
     }
 
     private void initUI() {

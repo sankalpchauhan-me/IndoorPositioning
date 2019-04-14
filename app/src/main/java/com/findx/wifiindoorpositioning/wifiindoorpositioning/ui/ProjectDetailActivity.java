@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,6 +27,8 @@ import com.findx.wifiindoorpositioning.wifiindoorpositioning.model.AccessPoint;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.model.IndoorProject;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.model.ReferencePoint;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.utils.RecyclerItemClickListener;
+import com.wooplr.spotlight.SpotlightView;
+import com.wooplr.spotlight.utils.SpotlightListener;
 
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
@@ -66,6 +69,52 @@ public class ProjectDetailActivity extends AppCompatActivity implements View.OnC
         Log.i("ProjectDetailActivity", "name>"+project.getName());
 
         initUI();
+
+        new SpotlightView.Builder(ProjectDetailActivity.this)
+                .introAnimationDuration(400)
+                .enableRevealAnimation(true)
+                .performClick(true)
+                .fadeinTextDuration(400)
+                .headingTvColor(Color.parseColor("#eb273f"))
+                .headingTvSize(32)
+                .headingTvText("Add Access Points")
+                .subHeadingTvColor(Color.parseColor("#ffffff"))
+                .subHeadingTvSize(16)
+                .setListener(new SpotlightListener() {
+                    @Override
+                    public void onUserClicked(String s) {
+                        new SpotlightView.Builder(ProjectDetailActivity.this)
+                                .introAnimationDuration(400)
+                                .enableRevealAnimation(true)
+                                .performClick(true)
+                                .fadeinTextDuration(400)
+                                .headingTvColor(Color.parseColor("#eb273f"))
+                                .headingTvSize(32)
+                                .headingTvText("Add Access Points")
+                                .subHeadingTvColor(Color.parseColor("#ffffff"))
+                                .subHeadingTvSize(16)
+                                .subHeadingTvText("Reference Points are relative, the more the number of rp's the more accurate the measurement would be.")
+                                .maskColor(Color.parseColor("#dc000000"))
+                                .target(findViewById(R.id.btn_add_rp))
+                                .lineAnimDuration(400)
+                                .lineAndArcColor(Color.parseColor("#eb273f"))
+                                .dismissOnTouch(true)
+                                .dismissOnBackPress(true)
+                                .enableDismissAfterShown(true)
+                                .usageId("10222") //UNIQUE ID
+                                .show();
+                    }
+                })
+                .subHeadingTvText("AP's will be fixed. For best Results add atleast 3 Ap's")
+                .maskColor(Color.parseColor("#dc000000"))
+                .target(findViewById(R.id.btn_add_ap))
+                .lineAnimDuration(400)
+                .lineAndArcColor(Color.parseColor("#eb273f"))
+                .dismissOnTouch(true)
+                .dismissOnBackPress(true)
+                .enableDismissAfterShown(true)
+                .usageId("10221") //UNIQUE ID
+                .show();
     }
 
     private void initUI() {

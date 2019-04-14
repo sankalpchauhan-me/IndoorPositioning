@@ -11,8 +11,9 @@
     <uses-permission
         android:name="android.permission.INTERNET"
         android:required="true" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
-        android:required="true"/>
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:required="true" />
 
     <application
         android:name=".BaseApp"
@@ -25,7 +26,7 @@
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.NewProjectActivity"
             android:label="@string/new_project" />
@@ -50,7 +51,9 @@
 
         <service android:name=".core.WifiService" />
 
-        <activity android:name=".ui.MainActivity">
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,16 +66,16 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"
-            />
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".ui.MapsActivity"
-            android:label="Maps"></activity>
+            android:label="Maps" />
+        <activity android:name=".ui.About" android:theme="@style/AppTheme.Extra"></activity>
     </application>
 
 </manifest>

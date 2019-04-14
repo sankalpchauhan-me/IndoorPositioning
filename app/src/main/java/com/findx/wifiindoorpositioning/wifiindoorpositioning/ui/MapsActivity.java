@@ -176,11 +176,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-//        final BitmapDescriptor image = BitmapDescriptorFactory.fromResource(R.drawable.roomplaceholder);
-//        mMap = googleMap;
-//        final LatLngBounds springboardBounds = new LatLngBounds(
-//                new LatLng(28.589378, 77.314326),       // South west corner
-//                new LatLng(28.589780, 77.314568));      // North east corner
+
+        final BitmapDescriptor image = BitmapDescriptorFactory.fromResource(R.drawable.groundfloorfinal);
+        mMap = googleMap;
+        final LatLngBounds springboardBounds = new LatLngBounds(
+                new LatLng(28.589379, 77.314325),       // South west corner
+                new LatLng(28.589778, 77.314567));      // North east corner
 //
 //        // Add a marker in Sydney and move the camera
 //
@@ -194,7 +195,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                .positionFromBounds(springboardBounds);
 //        mMap.addGroundOverlay(springboard);
 
-        mMap = googleMap;
+
 
 
         locationCallback = new LocationCallback() {
@@ -215,7 +216,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         LatLng sydney = new LatLng(location.getLatitude(), location.getLongitude());
                         CameraUpdate locationcamera = CameraUpdateFactory.newLatLngZoom(
-                                sydney, 50);
+                                sydney, 30);
                         mMap.animateCamera(locationcamera);
 
                         mMap.addMarker(new MarkerOptions().position(sydney).icon(bitmapDescriptorFactory));

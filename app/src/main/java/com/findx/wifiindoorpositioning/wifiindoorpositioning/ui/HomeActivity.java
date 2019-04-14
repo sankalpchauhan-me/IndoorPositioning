@@ -1,6 +1,7 @@
 package com.findx.wifiindoorpositioning.wifiindoorpositioning.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,9 @@ import com.findx.wifiindoorpositioning.wifiindoorpositioning.R;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.adapter.ProjectsListAdapter;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.model.IndoorProject;
 import com.findx.wifiindoorpositioning.wifiindoorpositioning.utils.RecyclerItemClickListener;
+import com.wooplr.spotlight.SpotlightView;
+
+import java.util.Date;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -31,6 +35,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ProjectsListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private FloatingActionButton fab;
+
+    String usageId = new Date().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,27 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         // specify an adapter
         mAdapter = new ProjectsListAdapter(projects);
         mRecyclerView.setAdapter(mAdapter);
+
+        new SpotlightView.Builder(HomeActivity.this)
+                .introAnimationDuration(400)
+                .enableRevealAnimation(true)
+                .performClick(true)
+                .fadeinTextDuration(400)
+                .headingTvColor(Color.parseColor("#eb273f"))
+                .headingTvSize(32)
+                .headingTvText("New Project")
+                .subHeadingTvColor(Color.parseColor("#ffffff"))
+                .subHeadingTvSize(16)
+                .subHeadingTvText("A project can be for a particular area/building \n Admin can create multiple standalone projects \n Click to add a new one")
+                .maskColor(Color.parseColor("#dc000000"))
+                .target(fab)
+                .lineAnimDuration(400)
+                .lineAndArcColor(Color.parseColor("#eb273f"))
+                .dismissOnTouch(true)
+                .dismissOnBackPress(true)
+                .enableDismissAfterShown(true)
+                .usageId(usageId+"1") //UNIQUE ID
+                .show();
     }
 
     @Override

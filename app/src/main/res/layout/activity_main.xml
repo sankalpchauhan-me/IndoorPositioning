@@ -1,41 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.findx.wifiindoorpositioning.wifiindoorpositioning.ui.MainActivity">
+    tools:context="com.findx.wifiindoorpositioning.wifiindoorpositioning.ui.MainActivity"
+    android:id="@+id/onboardingRootView">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_height="192dp"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
 
-    <Button
-        android:id="@+id/usrBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="USER"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminBTN" />
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-    <Button
-        android:id="@+id/adminBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="ADMIN"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mainImage"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/image_overlay_light"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                android:foreground="@drawable/image_overlay_light"/>
+
+            <!--THIS PROGRESSBAR MIGHT CAUSE PERFORMANCE ISSUES-->
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:id="@+id/eventProgress"
+                android:foreground="@drawable/image_overlay_light"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/activity_event_toolbar"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.ramotion.foldingcell.FoldingCell
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/folding_cell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                ​
+                <FrameLayout
+                    android:id="@+id/cell_content_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/black"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/LinksTB"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:textColor="@color/white"
+                        android:text="iat urna gravida quis. Fusce vulputate sagittis tortor sed fringilla. Vivamus dictum mauris eu massa rhoncus aliquet. Nam et nunc laoreet mauris semper ullamcorper non ut tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed pretium turpis in massa porttitor posuere. Nullam pretium dolor ut tellus faucibus, cursus venenatis nunc rhoncus. Fusce lobortis vestibulum condimentum. \n FingerPrinting: https://epublications.marquette.edu/cgi/viewcontent.cgi \n Kalman Filter: https://towardsdatascience.com/kalman-filter-an-algorithm-for-making-sense-from-the-insights-of-various-sensors-fused-together-ddf67597f35e"
+                        android:autoLink="web"/>
+
+
+                </FrameLayout>
+                ​
+                <FrameLayout
+                    android:id="@+id/cell_title_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@color/colorAccent"
+                        android:textSize="25dp"
+                        android:textAlignment="center"
+                        android:text="Smart Indoor Navigation System \n (Click to Know More)"
+                        android:typeface="sans"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+
+
+                </FrameLayout>
+                ​
+            </com.ramotion.foldingcell.FoldingCell>
+
+            <Button
+                android:id="@+id/usrBTN"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="USER Panel"
+                android:layout_below="@+id/folding_cell"
+                android:layout_centerHorizontal="true"
+
+                />
+
+
+
+        <Button
+            android:layout_centerInParent="true"
+            android:id="@+id/adminBTN"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="ADMIN"
+            android:layout_below="@+id/usrBTN"/>
+
+            <Button
+                android:id="@+id/aboutBTN"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="16dp"
+                android:layout_below="@+id/adminBTN"
+                android:textAlignment="center"
+                android:text="About Us"
+                style="@style/Widget.AppCompat.Button.Colored"/>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
