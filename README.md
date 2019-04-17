@@ -21,7 +21,7 @@ The functionalities offered :octocat: :star2: are:
 
 #### 3. User's Location or Device's Location
 
-<img src="/media/EvaluateTheLocation.gif" />&nbsp;
+<img src="/media/WhatsApp%20Image%202019-04-14.jpg" />&nbsp;
 
 ## Minimum Requirements
 
