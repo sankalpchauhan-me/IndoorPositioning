@@ -10,27 +10,22 @@ This app uses Fingerprinting method for evaluating current location of the devic
 
 <img src="/media/details.jpg" />&nbsp;
 
-#### This App requires the Wi-Fi and location services to store the RSS values of the access points and reference points.
 
-The functionalities offered :octocat: :star2: are:
+#### 1. Adding an Access Point
 
-
-#### 1. Adding an Access Point with supported Algorithm types
-
-<img src="/media/AlgoAndCreateAccessPoint.gif" />&nbsp;
+<img src="/media/WhatsApp%20Image%202019-04-14.gif" />&nbsp;
 
 #### 2. Adding a Reference Point
 
 <img src="/media/AddReferencePoint.gif" />&nbsp;
 
-#### 3. User's Location or Device's Location
+#### 3. User's Location or Device's Location plotted on Map
 
 <img src="/media/WhatsApp%20Image%202019-04-14.jpg" />&nbsp;
 
 ## Minimum Requirements
 
- * Android Studio 3.0.1
  * Android SDK Platform 26 (android-O)
- * Android sdk tools 26.0.2
- * Android sdk build-tools 26.0.2
+ * Android sdk tools 28.0.3
+ * Android sdk build-tools 28.0.3
 
