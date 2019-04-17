@@ -10,6 +10,9 @@ This app uses Fingerprinting method for evaluating current location of the devic
 
 <img src="/media/details.jpg" />&nbsp;
 
+#### 1. UI 
+<img src="media/WhatsApp%20Image%202019-04-14%20at%2010.32.37%20AM.jpeg" width=270 height=480 />&nbsp;
+<img src="media/WhatsApp%20Image%202019-04-14%20at%2010.33.48%20AM.jpeg" width=270 height=480 />&nbsp;
 
 #### 1. Adding an Access Point
 
@@ -19,9 +22,9 @@ This app uses Fingerprinting method for evaluating current location of the devic
 
 <img src="/media/AddReferencePoint.gif" />&nbsp;
 
-#### 3. User's Location or Device's Location plotted on Map
+#### 3. User's Navigation Path or Device's Location plotted on Map
 
-<img src="/media/WhatsApp%20Image%202019-04-14.jpg" />&nbsp;
+<img src="media/WhatsApp%20Image%202019-04-14%20at%2010.36.35%20AM.jpeg" width=270 height=480 />&nbsp;
 
 ## Minimum Requirements
 
