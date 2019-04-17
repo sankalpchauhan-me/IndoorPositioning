@@ -1,4 +1,4 @@
-# Wifi Indoor Positioning [![Build Status](https://travis-ci.org/sankalpchauhan-me/IndoorPositioning.svg?branch=master)](https://travis-ci.org/sankalpchauhan-me/IndoorPositioning) [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html) [![GitHub version](https://badge.fury.io/gh/sankalpchauhan-me%2FIndoorPositioning.svg)](https://badge.fury.io/gh/sankalpchauhan-me%2FWifiIndoorPositioning)
+# Indoor Positioning using RSS [![Build Status](https://travis-ci.org/sankalpchauhan-me/IndoorPositioning.svg?branch=master)](https://travis-ci.org/sankalpchauhan-me/IndoorPositioning) [![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html) [![GitHub version](https://badge.fury.io/gh/sankalpchauhan-me%2FIndoorPositioning.svg)](https://badge.fury.io/gh/sankalpchauhan-me%2FWifiIndoorPositioning)
 
 <img src="https://slideplayer.com/slide/4835959/15/images/2/Indoor+WiFi-based+Localization.jpg" align="middle" />&nbsp;
 
